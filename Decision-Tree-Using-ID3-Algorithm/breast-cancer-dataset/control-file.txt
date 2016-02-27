@@ -1,0 +1,11 @@
+1 Clump-Thickness 10 1 2 3 4 5 6 7 8 9 10
+2 Uniformity-of-Cell-Size 10 1 2 3 4 5 6 7 8 9 10
+3 Uniformity-of-Cell-Shape 10 1 2 3 4 5 6 7 8 9 10
+4 Marginal-Adhesion 10 1 2 3 4 5 6 7 8 9 10
+5 Single-Epithelial-Cell-Size 10 1 2 3 4 5 6 7 8 9 10
+6 Bare-Nuclei 10 1 2 3 4 5 6 7 8 9 10
+7 Bland-Chromatin 10 1 2 3 4 5 6 7 8 9 10
+8 Normal-Nucleoli 10 1 2 3 4 5 6 7 8 9 10
+9 Mitoses 10 1 2 3 4 5 6 7 8 9 10
+#target-attribute 2 for benign and 4 for malignant
+10 Class 2 2 4

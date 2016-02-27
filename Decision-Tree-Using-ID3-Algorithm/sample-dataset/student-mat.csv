@@ -1,0 +1,6 @@
+school;sex;address;famsize;Pstatus
+"GP";"M";"U";"GT3";"A"
+"MS";"F";"R";"GT3";"T"
+"GP";"M";"U";"LE3";"T"
+"GP";"F";"R";"GT3";"T"
+"MS";"F";"U";"GT3";"T"

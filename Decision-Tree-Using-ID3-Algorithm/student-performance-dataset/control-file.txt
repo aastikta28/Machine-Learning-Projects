@@ -1,0 +1,37 @@
+# Attributes for both student-mat.csv (Math course) and student-por.csv (Portuguese language course) datasets:
+# attribute-number attribute-name types values
+1 school 2 "GP" "MS"
+2 sex 2 "F" "M"
+3 age 8 15 16 17 18 19 20 21 22
+4 address 2 "U" "R"
+5 famsize 2 "LE3" "GT3"
+6 Pstatus 2 "T" "A"
+7 Medu 5 0 1 2 3 4
+8 Fedu 5 0 1 2 3 4
+9 Mjob 5 "teacher" "health" "services" "at_home" "other"
+10 Fjob 5 "teacher" "health" "services" "at_home" "other"
+11 reason 4 "home" "reputation" "course" "other"
+12 guardian 3 "mother" "father" "other"
+13 traveltime 4 1 2 3 4
+14 studytime 4 1 2 3 4
+15 failures 3 1 2 4
+16 schoolsup 2 "yes" "no"
+17 famsup 2 "yes" "no"
+18 paid 2 "yes" "no"
+19 activities 2 "yes" "no"
+20 nursery 2 "yes" "no"
+21 higher 2 "yes" "no"
+22 internet 2 "yes" "no"
+23 romantic 2 "yes" "no"
+24 famrel 5 1 2 3 4 5
+25 freetime 5 1 2 3 4 5
+26 goout 5 1 2 3 4 5
+27 Dalc 5 1 2 3 4 5
+28 Walc 5 1 2 3 4 5
+29 health 5 1 2 3 4 5
+30 absences 94 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93
+31 G1 21 "0" "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20"
+32 G2 21 "0" "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20"
+33 G3 21 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+#target attribute
+34 subject 2 "Math" "Portuguese"

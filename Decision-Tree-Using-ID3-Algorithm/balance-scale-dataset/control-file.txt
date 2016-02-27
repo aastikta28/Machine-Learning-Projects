@@ -1,0 +1,8 @@
+# Attributes balloon datasets:
+# attribute-number attribute-name types values
+1 Left-Weight 5 1 2 3 4 5
+2 Left-Distance 5 1 2 3 4 5
+3 Right-Weight 5 1 2 3 4 5
+4 Right-Distance 5 1 2 3 4 5
+#target attribute
+5 Class Name 3 L B R
