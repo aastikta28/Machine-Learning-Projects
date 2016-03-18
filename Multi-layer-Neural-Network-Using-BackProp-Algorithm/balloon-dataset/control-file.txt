@@ -1,0 +1,8 @@
+# Attributes balloon datasets:
+# attribute-number attribute-name types values
+1 Color 2 yellow purple
+2 size 2 large small
+3 act 2 stretch dip
+4 age 2 adult child
+#target attribute
+5 inflated 2 T F

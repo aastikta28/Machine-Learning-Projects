@@ -1,0 +1,9 @@
+# Attributes for both student-mat.csv (Math course) and student-por.csv (Portuguese language course) datasets:
+# attribute-number attribute-name types values
+1 school 2 "GP" "MS"
+2 sex 2 "F" "M"
+3 address 2 "U" "R"
+4 famsize 2 "LE3" "GT3"
+5 Pstatus 2 "T" "A"
+#target attribute
+6 subject 2 "Math" "Portuguese"

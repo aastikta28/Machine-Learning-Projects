@@ -1,0 +1,8 @@
+1 buying 4 vhigh high med low
+2 maint 4 vhigh high med low
+3 doors 5 2 3 4 5 more
+4 persons 3 2 4 more
+5 lug_boot 3 small med big
+6 safety low med high
+#target_attribute
+7 class 4 unacc acc good vgood
