@@ -64,78 +64,96 @@ def main():
     del attr_list[-1]
 
     pat = create_pattern.pattern(data, attr_list, target_attr)
-    f_pat = []    
-    for p in pat:
-        f_pat.append(p)
-    myNN = neural_network.NN(5, 10, 2)
-    myNN.train(f_pat)
+    
+#    myNN = neural_network.NN(5, 10, 2)
+#    myNN.train(f_pat)
 
-#    datasets = [[]]    
-#    
-#    valid_data_len = len(NN_data)*1/10 # dividing data into 10 sets.
-#    j=0
-#    for i in range(1,11): 
-#        dat = []
-#        for d in range(j,j+valid_data_len):
-#            dat.append(NN_data[d])
-#            j=j+1
-#        i=i+1
-#        datasets.append(dat)
-#    datasets.remove([])
-#    #print "it should be 10: ", len(datasets)
-#
-#    accuracy = []
-#    errors = []
+    datasets = [[]]    
+    
+    valid_data_len = len(pat)*1/10 # dividing data into 10 sets.
+    j=0
+    for i in range(1,11): 
+        dat = []
+        for d in range(j,j+valid_data_len):
+            dat.append(pat[d])
+            j=j+1
+        i=i+1
+        datasets.append(dat)
+    datasets.remove([])
+    #print "it should be 10: ", len(datasets)
+
+    accuracy = []
+    errors = []
 #    sizes = []
-#    num = 1
-#
-#    for d in datasets:
-#        print "***********Iteration", num, "***********"
-#        num += 1
-#        test_data = d
-#        t_data = []
-#        for left_d in datasets:
-#            if left_d != d:
-#                t_data = t_data + left_d
-#    
-#        #print "test data: ", len(test_data)
-#    
-#        #dividing data into training and pruning datasets.        
-#        train_data_len = len(t_data)*6/10
-#        prune_data = []
-#        train_data = []
-#        for d in range(0,train_data_len):
-#            train_data.append(t_data[d])
-#        for d in range(train_data_len, len(t_data)):
-#            prune_data.append(t_data[d])
-#            
-#        #creating a neural network for training dataset.
-#        neural_network.NN([len(attr_list), 10, int(target_attr.getvals()[2])])
-#        # math = 0 and portugese = 1
-#        for td in train_data:
-#            
+    num = 1
+
+    for d in datasets:
+        print "***********Iteration", num, "***********"
+        num += 1
+        test_data = d
+        train_data = []
+        for left_d in datasets:
+            if left_d != d:
+                train_data = train_data + left_d
+                
+        train_pat = [] 
+        test_pat = []
+        for p in train_data:
+            train_pat.append(p)
+        for p in test_data:
+            test_pat.append(p)
+        
+        myNN = neural_network.NN(len(attr_list), 10, int(attribute.Attribute.getvals(target_attr)[2]))
+        myNN.train(train_pat)
+        tested_pat = myNN.test(test_pat)        
+        #frac = 1.0/int(attribute.Attribute.getvals(target_attr)[2])
+        acc = 0.0        
+        
+        for t in tested_pat:
+            
+            res = t[0]
+            res_now = []
+            for r in res:
+                if r < 0.5:
+                    res_now.append(0.0)
+                else:
+                    res_now.append(1.0)
+        
+            cnt = 0
+            for i in range(0,len(res_now)):
+                if res_now[i] == t[1][i]:
+                    cnt = cnt+1
+            if cnt == len(res_now):
+                acc = acc+1
+            #print res_now , " compare to ", t[1]
+            
+        accu = acc/len(tested_pat)
+        accuracy.append(accu)    
+        errors.append(1.0-accu)
+            
+       
 #            
 #        
 #        
 #
-#    #finding accuracy and confidence interval.
-#    print "***********Statistics***********"
-#    sum_acc = 0.0        
-#    for acc in accuracy:
-#        #print acc*100
-#        sum_acc += (acc*100)
-#    #print sum_acc
-#    mean_acc = sum_acc/len(accuracy)
-#    print "Mean accuracy: ", mean_acc
-#    print "Mean Error rate: ", 100-mean_acc
-#    sum_err = 0.0        
-#    for err in errors:
-#        #print err
-#        sum_err += err
-#    mean_err = sum_err/len(accuracy)
-#    print "Mean Size of tree (before pruning):", max(sizes)
-#    print "Mean Size of tree (after pruning):", min(sizes)    
-#    print "Confidence Interval on Accuracy: [",(mean_acc-1.96*mean_err)," , ",(mean_acc+1.96*mean_err) , "]" 
+    #finding accuracy and confidence interval.
+    print "***********Statistics***********"
+    sum_acc = 0.0        
+    for acc in accuracy:
+        #print acc*100
+        sum_acc += (acc*100)
+    #print sum_acc
+    mean_acc = sum_acc/len(accuracy)
+    print "Mean accuracy: ", mean_acc
+    print "Mean Error rate: ", 100-mean_acc
+    sum_err = 0.0        
+    for err in errors:
+        #print err
+        sum_err += err
+    mean_err = sum_err/len(accuracy)
+    #print "Mean Size of tree (before pruning):", max(sizes)
+    #print "Mean Size of tree (after pruning):", min(sizes)    
+    print "Confidence Interval on Accuracy: [",(mean_acc-1.96*mean_err)," , ",(mean_acc+1.96*mean_err) , "]" 
 
 
 if __name__ == '__main__':
