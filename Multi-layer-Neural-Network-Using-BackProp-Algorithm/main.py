@@ -103,7 +103,7 @@ def main():
         for p in test_data:
             test_pat.append(p)
         
-        myNN = neural_network.NN(len(attr_list), 10, int(attribute.Attribute.getvals(target_attr)[2]))
+        myNN = neural_network.NN(len(attr_list), 6, int(attribute.Attribute.getvals(target_attr)[2]))
         myNN.train(train_pat)
         tested_pat = myNN.test(test_pat)        
         #frac = 1.0/int(attribute.Attribute.getvals(target_attr)[2])
@@ -140,7 +140,7 @@ def main():
     print "***********Statistics***********"
     sum_acc = 0.0        
     for acc in accuracy:
-        #print acc*100
+        print acc*100
         sum_acc += (acc*100)
     #print sum_acc
     mean_acc = sum_acc/len(accuracy)

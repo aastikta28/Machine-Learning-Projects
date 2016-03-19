@@ -9,6 +9,8 @@ def reading_data():
         line = line.strip("\n")
         line = line.split(',')
         new_line = []
+        if '?' in line:
+            continue
         for l in range(1,len(line)):
             new_line.append(line[l])
                 
